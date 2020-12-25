@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{enumitem}
+
+\newtheorem*{mythm*}{Theorem}
+
+\begin{document}
+\begin{mythm*}
+	Let $(N, S, e)$ and $(N', S', e')$ be Peano systems. Let $\pi$ be an isomorphism from $(N, S, e)$ onto 
+$(N', S', e')$. Prove that $\pi^{-1}$ is thus an isomorphism from $(N', S', e')$ onto $(N, S, e)$.
+	\begin{proof}
+		$\pi$ is a bijection, so is $\pi^{-1}$. To prove that $\pi^{-1}$ is an isomorphism we have to show
+		that:
+		\begin{enumerate}[label=(\arabic*)]
+			\item $\pi^{-1}(e') = e$
+			\item $(\forall x \in N')(\pi^{-1}(S'(x)) = S(\pi^{-1}(x)))$
+		\end{enumerate}
+		Since $\pi(e)=e'$ then $\pi^{-1}(e') = e$. Now we prove the second statement by induction.
+		Consider a set $A = \{y \in N': \pi^{-1}(S'(y)) = S(\pi^{-1}(y)))\}$, prove that it is closed under
+		$S'$. First show that $e'\in A$.
+		\begin{align*}
+			\pi(S(e)) &= S'(\pi(e)) &\text{def. of $\pi$}\\
+			\pi(e) &= e' \\
+			\pi^{-1}(e') &= e \\
+			\pi^{-1}(S'(e')) &= S(\pi^{-1}(e')) \\
+			e' &\in A
+			\intertext{As induction hypothesis suppose that $y \in A$, therefore
+			$\pi^{-1}(S'(y)) = S(\pi^{-1}(y))$. Show that $S'(y)$ is also in $A$ by
+			proving that $\pi^{-1}(S'(S'(y))) = S(\pi^{-1}(S'(y)))$ holds. Since
+			$y \in N'$ and $\pi^{-1}:N' \to N$ is bijection, then there exists $x \in N$ such that
+			$x = \pi^{-1}(y)$}  
+			(\forall x \in N)(\pi(S(x)) &= S'(\pi(x))) \\
+			S(x) &\in N \\
+			\pi(S(S(x)) &= S'(\pi(S(x)))) &\text{def. of $\pi$} \\
+			\pi(S(x) &= S'(\pi(x))) &\text{def. of $\pi$} \\
+			\pi(S(S(x)) &= S'(S'(\pi(x))) \\
+			\pi^{-1}(S'(S'(\pi(x)))) &= S(S(x)) \\
+			\pi^{-1}(S'(S'(\pi(\pi^{-1}(y))))) &= S(S(\pi^{-1}(y)))) &\text{replacing $x$ with $\pi^{-1}(y)$}\\
+			\pi^{-1}(S'(S'(y)))) &= S(S(\pi^{-1}(y))) \\
+			\pi^{-1}(S'(S'(y)))) &= S(\pi^{-1}(S'(y))) &\text{by Induction Hypothesis}\\
+			S'(y) &\in A \\
+			\intertext{The set $A$ is closed under $S'$, hence $A=N'$}
+			(\forall x \in N')(\pi^{-1}(S'(x)) &= S(\pi^{-1}(x))) \\
+		\end{align*}
+		Therefore $\pi^{-1}$ is an isomorphism from $(N', S', e')$ onto $(N, S, e)$.
+	\end{proof}
+\end{mythm*}
+
+\end{document}
+
