@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{enumitem}
+
+\newtheorem*{mythm*}{Theorem}
+\newtheorem{mythm}{Theorem}
+\newtheorem{mydef}{Definition}
+
+\begin{document}
+\begin{mythm}
+	For all natural numbers $m$ and $n$,
+	\begin{align*}
+		m + 0 &= m \\
+		m + n^+ &= (m + n)^+
+	\end{align*}
+\end{mythm}
+
+\begin{mythm}
+	For all $m$ in $\omega$, $m + 1 = m^+$.
+\end{mythm}
+
+\begin{mythm}
+	For all natural numbers $m$ and $n$,
+	\begin{align*}
+		m \cdot 0 &= 0 \\
+		m \cdot n^+ &= m \cdot n + m
+	\end{align*}
+\end{mythm}
+
+\begin{mythm}
+	(Associative Law for Addition). For all $m$, $n$, and $p$ in $\omega$,
+	\begin{equation*}
+		m + (n + p) = (m + n) + p
+	\end{equation*}
+\end{mythm}
+
+\begin{mythm}
+	For all natural numbers $m \in \omega$ and $n \in \omega$, we have $m^+ + n &= (m + n)^+$.
+\end{mythm}
+
+\begin{mythm}
+	(Commutative Law for Addition). For all $m$, $n$ in $\omega$,
+	\begin{equation*}
+		m + n = n + m 
+	\end{equation*}
+\end{mythm}
+
+\begin{mythm}
+	(Distributive Law). For all natural numbers $m$, $n$, and $p$ in $\omega$,
+	\begin{equation*}
+		m \cdot (n + p) = m \cdot n + m \cdot p
+	\end{equation*}
+\end{mythm}
+
+\begin{mythm}
+	(Associative Law for Multiplication). For all natural numbers $m$, $n$, and $p$ in $\omega$,
+	\begin{equation*}
+		m \cdot (n \cdot p) = (m \cdot n) \cdot p
+	\end{equation*}
+\end{mythm}
+
+\begin{mythm}
+	(Commutative Law for Multiplication). For all natural numbers $m$, $n$, and $p$,
+	\begin{equation*}
+		m \cdot n = n \cdot m
+	\end{equation*}
+\end{mythm}
+
+\begin{mydef}
+	Let $E \colon \omega \times \omega \to \omega$ be the unique function satisfying
+	\[
+	E(m, n) =
+	\begin{cases}
+		E(m, 0) = 1 \\
+		E(m, n^+) = E(m, n) \cdot m
+	\end{cases}
+	\]
+\end{mydef}
+
+\end{document}
