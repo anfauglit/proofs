@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{enumitem}
+
+\newtheorem{thm}{Theorem}
+\numberwithin{thm}{subsection}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{mydef}[thm]{Definition}
+
+\begin{document}
+\setcounter{section}{3}
+\section{Natural numbers}
+
+\setcounter{subsection}{3}
+\subsection{Order on $\omega$}
+
+\begin{mydef}
+	We say that  m is \textbf{less than} n if and only if $m \in n$, whenever m and n are in $\omega$.
+\end{mydef}
+
+\begin{prop}
+	Len n be a natural number. Then
+	\begin{enumerate}[label=(\arabic*)]
+		\item if $k \in n$, then $k \subseteq n$;
+		\item if $a \in k$ and $k \in n$, then $a \in n$;
+		\item if $k \in \omega$, then $k \subseteq \omega$;
+		\item if $a \in k$ and $k \in \omega$, then $a \in \omega$.
+	\end{enumerate}
+\end{prop}
+
+\begin{lem}
+	Let $n \in \omega$. Then $n \notin n$.
+\end{lem}
+
+\begin{mydef}
+	We write $m \leq n$ if and only if $m \in n$ or $m = n$, whenever m and n are in $\omega$.
+\end{mydef}
+
+\begin{lem}
+	Let $m \in \omega$ and $n \in \omega$. If $m \leq n$ and $n \leq m$, then $m = n$.
+\end{lem}
+
+\begin{lem}
+	For all $m \in \omega$, we have that $0 \leq m$.
+\end{lem}
+
+\begin{lem}
+	For all natural numbers m and n, if $m \in n$, then $m^+ \in n^+$.
+\end{lem}
+
+\end{document}
