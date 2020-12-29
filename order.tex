@@ -1,15 +1,22 @@
-\documentclass{article}
+\documentclass[letterpaper, 10pt]{article}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{mathtools}
 \usepackage{enumitem}
 
-\newtheorem{thm}{Theorem}
+\newtheorem{thm}{Theorem}[section]
 \numberwithin{thm}{subsection}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{prop}[thm]{Proposition}
+\newtheorem{col}[thm]{Corollary}
 
 \theoremstyle{definition}
 \newtheorem{mydef}[thm]{Definition}
+
+\setlength\parindent{0pt}
+
+% Def new command for "less than or equal" relation
+\newcommand{\ineq}{%
+	\mathrel{\mkern1mu\underline{\mkern-1mu\in\mkern-1mu}\mkern1mu}}
 
 \begin{document}
 \setcounter{section}{3}
@@ -23,7 +30,7 @@
 \end{mydef}
 
 \begin{prop}
-	Len n be a natural number. Then
+	Let n be a natural number. Then
 	\begin{enumerate}[label=(\arabic*)]
 		\item if $k \in n$, then $k \subseteq n$;
 		\item if $a \in k$ and $k \in n$, then $a \in n$;
@@ -37,19 +44,60 @@
 \end{lem}
 
 \begin{mydef}
-	We write $m \leq n$ if and only if $m \in n$ or $m = n$, whenever m and n are in $\omega$.
+	We write $m \ineq n$ if and only if $m \in n$ or $m = n$, whenever m and n are in $\omega$.
 \end{mydef}
 
 \begin{lem}
-	Let $m \in \omega$ and $n \in \omega$. If $m \leq n$ and $n \leq m$, then $m = n$.
+	Let $m \in \omega$ and $n \in \omega$. If $m \ineq n$ and $n \ineq m$, then $m = n$.
 \end{lem}
 
 \begin{lem}
-	For all $m \in \omega$, we have that $0 \leq m$.
+	For all $m \in \omega$, we have that $0 \ineq m$.
 \end{lem}
 
 \begin{lem}
 	For all natural numbers m and n, if $m \in n$, then $m^+ \in n^+$.
 \end{lem}
+
+\begin{col}
+	For all natural numbers m and n, $m \in n$ if and only if $m^+ \in n^+$.
+\end{col}
+
+\begin{thm}[Thrichotomy Law on $\omega$]
+	For all m and in in $\omega$, exactly one of the three relationships $m \in n$, $m=n$, $n\in m$ holds.
+\end{thm}
+
+\begin{col}
+	If m and n are in $\omega$, then $m \in n$ if and only if $m \subset n$.
+\end{col}
+
+\begin{thm}[Properties of Inequality]
+	For all natural numbers m, n, and p, the following hold:
+	\begin{enumerate}[label=(\arabic*)]
+		\item $m \in n$ in and only if $m+p \in n+p$.
+		\item If $p \ne 0$, then $m \in n$ if and only if $m\cdot p \in n \cdot p$.
+	\end{enumerate}
+\end{thm}
+	
+\begin{col}[Cancellation Laws]
+	For all natural numbers m, n, and p, the following hold:
+	\begin{enumerate}[label=(\arabic*)]
+		\item If $m+p = n+p$, then $m=n$.
+		\item If $p \ne 0$, then $m \cdot p = n \cdot p$ implies $m=n$.
+	\end{enumerate}
+\end{col}
+
+\begin{thm}[Well-Ordering Principle]
+	Let A be a nonempty subset of $\omega$. Then A has a least element; that is, there is an $l \in A$ such 
+	that $l \in a$ for all $a \in A$.
+\end{thm}
+
+\begin{thm}[Strong Induction Principle on $\omega$]
+	Let A be a subset of $\omega$ and suppose that
+	\begin{equation}
+		(\forall n \in \omega)(n \subseteq A \to n \in A)
+	\end{equation}
+	Then $A=\omega$.
+\end{thm}
 
 \end{document}
